@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script/jquery"></script>
+    <title>Validando com Jquery</title>
+    <script type="text/javascript">
+        
+        $(document).ready(function(){
+            $("input").blur(function(){ //BLUR SIGNIFICA QUE AQUELE OBJETO ESTA FORA DE FOCO
+                if($(this).val()=="") { //SE O VALOR (val) DO INPUT ESTIVER VAZIO ("")
+                    $(this).css({"border-color": "#F00", "padding":"2px"}); //MUDA A COR DA BORDA E O TAMANHO DO PADDING
+                }
+            });
+        });
+    
+        $(document).ready(function(){
+            $("#botao").click(function(){ //BOTAO AO CLICAR RECEBE ESSA FUNÇÃO
+            var cont = 0;                 //A VAR CONT RECEBE O VALOR 0
+            $("#form input").each(function(){   //O INPUT DO FORMULARIO
+                if($(this).val() == "" ) {      //SE ELES ESTIVEREM VAZIOS
+                    $(this).css({"border":"1px solid #F00", "padding":"2px"}); //O CSS MUDA A BORDA E O PADDING
+                }
+            });
+            if(cont==0){        //SE A VAR CONT CONTINUAR COM O SEU VALOR 0
+                $("#form").submit();    //O FORM É ENVIADO (teoriocamente...)
+            }
+        })
+        })
+        
+    </script>
+</head>
+<body>
+    <form id="form" name="form" method="post">
+        <span style="display: inline-table; width: 70px;">Nome</span>
+        <input type="text" id="nome" value="">
+        <br><br>
+
+
+        <span style="display: inline-table; width: 70px;">Email</span>
+        <input type="email" id="email" value="">
+        <br><br>
+
+        <span style="display: inline-table; width: 70px;">Telefone</span>
+        <input type="text" id="telefone" value="">
+        <br><br>
+
+        <button type="button" id="botao" value="enviar">Enviar</button>
+    </form>
+</body>
+</html>

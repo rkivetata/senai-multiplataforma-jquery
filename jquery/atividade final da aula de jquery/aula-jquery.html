@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>JQuery, methods, eventos</title>
+</head>
+<body>
+    <h2>Este é um cabeçalho</h2>
+    <p>Esse é um paragráfo</p>
+    <p>Esse é mais um paragráfo</p>
+    <button type="button">Clique aqui para apagar todos os paragráfos</button>
+
+    <p>click teste</p>
+
+    <p>deu certo? clica de novo pra ver...</p>
+
+    <p>heheh</p>
+
+    <p>clica duas vezes</p>
+
+    <p id="p1">Passa o mouse por cima de mim...</p>
+
+    <p id="p2">Oiii...</p>
+
+    <p id="p3">Vamos testar</p>
+
+    <p id="p4">Mouse up</p>
+
+    <p id="hover">Hover</p>
+
+    <p id="on">Teste com o method on</p> <!--Fazer o ON-->
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $("p").hide();
+            })
+        })
+
+        $(document).ready(function(){
+            $("p").click(function() {
+                $(this).hide();
+            })
+        })
+
+        $(document).ready(function(){
+            $("p").dblclick(function(){
+                $(this).hide();
+            })
+        })
+
+        $(document).ready(function(){
+            $("#p1").mouseenter(function(){
+                alert("Ei, o que foi isso?")
+            })
+        })
+
+        $(document).ready(function(){
+            $("#p2").mouseleave(function(){
+                alert("Já tá saindo?")
+            })
+        })
+
+        $(document).ready(function(){
+            $("#p3").mousedown(function(){
+                alert("Um alerta com mouse down")
+            })
+        })
+
+        $(document).ready(function(){
+            $("#p4").mouseup(function(){
+                alert("Um alerta com mouse up")
+            })
+        })
+
+        $(document).ready(function(){
+            $("#hover").hover(function(){
+                alert("Um alerta com mouse up");
+                 
+            },
+        function(){
+            alert("Tchauzinho!");
+        })
+        })
+
+    </script>
+</body>
+</html>

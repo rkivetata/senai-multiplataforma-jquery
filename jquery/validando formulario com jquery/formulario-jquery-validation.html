@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+
+    <title>Formulario com Jquery Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="script/jquery-3.2.1.min.js"></script>
+    <script src="script/jquery.validate.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#formulario").validate({
+                //DEFINE AS REGRAS
+                rules:{ 
+                    nome:{                          
+                        required:true, minlength:2          
+                    },
+                    email:{
+                        required:true, email:true
+                    },
+                    mensagem:{
+                        required:true, minlength:2
+                    }
+                },
+
+                //DEFINE AS MENSAGENS DE ERRO PARA CADA REGRA
+                messages:{
+                    nome:{
+                        required: "Digite o seu nome.",                             //PARA O REQUER
+                        minlength: "O seu nome deve ter no mínimo 2 caracteres."     //PARA O MINIMO
+                    },
+                    email:{
+                        required:"Digite seu email para contato.",
+                        email:"Digite um email valido."
+                    },
+                    mensagem: {
+                        required: "Digite sua mensagem.",
+                        minlength:"A sua mensagem deve conter no mínimo 2 caracteres."
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <form id="formulario" method="post">   
+        <span>Nome</span>
+            <input type="text" id="nome" name="nome">
+            <br><br>
+
+        <span>Email</span>
+            <input type="text" name="email" id="email">
+            <br><br>
+
+
+        <span>Mensagem</span>
+        <textarea name="mensagem" id="mensagem"></textarea>
+        <br><br>
+
+        <input type="submit" name="botao" id="botao" class="submit" value="Enviar">
+    </form>
+</body>
+</html>

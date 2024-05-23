@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Forms com Jquery - Focus</title>
+</head>
+<body>
+    <h1>Validação de Formulário</h1>
+    <p>Formulário utilizando javascript</p>
+
+    <form  class="formulario" name="form1">
+
+        <div class="nome">
+            <p class="texto">Nome</p>  
+            <input class="botao__input" type="text" name="nome" size="30" maxlength="100">
+            <p class="campo__obrigatorio">*Esse campo é obrigatório.</p>
+        </div>
+            
+        <div class="email">
+            <p class="texto">Email</p>
+            <input class="botao__input" type="text" name="email" size="50" maxlength="100">
+            <p class="campo__obrigatorio">*Esse campo é obrigatório.</p>
+        </div>
+            
+        <div class="senha__repetir-senha">
+            <p class="texto">Senha</p>
+            <input class="botao__input" type="password" name="senha" size="30" maxlength="100">
+            <p class="campo__obrigatorio">*Esse campo é obrigatório.</p>
+
+            <p class="texto">Repetir Senha</p>
+            <input class="botao__input" type="password" name="repetirSenha" size="30" maxlength="100">
+            <p class="campo__obrigatorio">*Esse campo é obrigatório.</p>
+        </div>
+        
+        <input class="botao__enviar" type="submit" onclick="return validar()">
+    </form>
+    
+
+
+    <script>
+        $(document).ready(function(){
+            $("input").focus(function(){
+                $(this).css("background-color", "#f1f3f5"
+
+                )
+            })
+        })
+
+        $(document).ready(function(){
+            $(p).mouseout(function(){
+                //A AÇÃO DESEJADA PARA O OBJETO FICA AQUI
+            })
+        })
+    </script>
+</body>
+</html>

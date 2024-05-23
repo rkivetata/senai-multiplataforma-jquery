@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!--ADICIONANDO O JQUERY-->
+    <title>Aprendendo com jQuery</title>
+</head>
+<body>
+
+    <p class="p_click">clique aqui para esconder o parágrafo</p>
+
+    <p class="p_duplo-click">duplo click para esconder esse parágrafo</p>
+
+    <p id="p_mouseenter">passe o mouse sobre esse parágrafo</p>
+
+    <p id="mouseleave">tire o mouse desse parágrafo</p>
+
+    <input type="text" placeholder="clique aqui">
+
+    
+    <script>
+
+        $(document).ready(function(){   //SINTAXE BÁSICA
+            $("input").blur(function(){    //SELECIONANDO O OBJETO INPUT QUE QUANDO ESTIVER FORA DE FOCO ELE CHAMA A PROXIMA FUNÇÃO
+                $(this).css("border-color", "#91a7ff")  //A BORDA DELE MUDA DE COR
+            });
+        });
+
+        $(document).ready(function(){   //SINTAXE BÁSICA
+            $("input").focus(function(){    //SELECIONANDO O OBJETO INPUT QUE QUANDO ESTIVER FOCADO NELE CHAMA A PROXIMA FUNÇÃO
+                $(this).css("background-color", "#dbe4ff")
+            });
+        });
+
+        $(document).ready(function(){   //SINTAXE BÁSICA
+            $("#mouseleave").mouseleave(function(){    //SELECIONANDO OBJETO QUE AO MOUSE SAIR VAI CHAMAR A FUNÇÃO SEGUINTE    
+                alert("Oi!")         //O ALERT MOSTRA NA TELA.            
+            });
+        });
+
+        $(document).ready(function(){   //SINTAXE BÁSICA
+            $("#p_mouseenter").mouseenter(function(){    //SELECIONANDO OBJETO QUE AO ENTRAR O MOUSE VAI CHAMAR A FUNÇÃO SEGUINTE    
+                alert("Opa!")         //O ALERT MOSTRA NA TELA.            
+            });
+        });
+        
+        $(document).ready(function(){   //SINTAXE BÁSICA
+            $("p").click(function(){    //SELECIONANDO OBJETO QUE AO CLICAR VAI CHAMAR A FUNÇÃO SEGUINTE    
+                $(this).hide();         //FALA QUE O OBJETO SELECIONADO (O "P") VAI ESCONDER         
+            });
+        });
+
+
+        $(document).ready(function(){   //SINTAXE BÁSICA
+            $(".p_duplo-click").dblclick(function(){    //SELECIONANDO OBJETO DE CLASS p_duplo-click QUE AO RECEBER DUPLO CLICK VAI ESCONDER    
+                $(this).hide();         //FALA QUE O OBJETO SELECIONADO (p_duplo-click) VAI ESCONDER            
+            });
+        });
+
+    </script>
+
+</body>
+</html>
